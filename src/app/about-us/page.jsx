@@ -1,85 +1,163 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
+const highlights = [
+  { value: '2+', label: 'Years clinical experience' },
+  { value: '1000+', label: 'Patients supported' },
+  { value: 'MPT', label: 'Advanced physiotherapy training' },
+]
+
+const focusAreas = [
+  'Back and neck pain',
+  'Post-surgical recovery',
+  'Sports injury rehabilitation',
+  'Neurological rehabilitation',
+  'Women\'s health physiotherapy',
+  'Geriatric and home-visit care',
+]
+
+const approach = [
+  {
+    title: 'Listen first',
+    copy: 'Every plan begins with your pain history, routine, comfort level, and recovery goals.',
+  },
+  {
+    title: 'Treat with evidence',
+    copy: 'Care combines manual therapy, progressive exercise, posture correction, and functional retraining.',
+  },
+  {
+    title: 'Build lasting confidence',
+    copy: 'You leave with practical home guidance so improvement continues beyond the clinic visit.',
+  },
+]
+
 export default function AboutUs() {
   return (
-    <div className="">
-      <header className="mb-10 text-center">
-        <h1 className="text-4xl font-semibold text-teal-900">About Dr. Kamini Shakya</h1>
-        <p className="mt-3 text-slate-600">Evidence-led physiotherapy for lasting recovery.</p>
-      </header>
-
-      <section className="grid gap-8 lg:grid-cols-1">
-        <div className="rounded-3xl bg-white p-8 shadow-2xl">
-          <img
-            src="/kamini.png"
-            alt="Dr. Kamini Shakya"
-            className="mx-auto h-44 w-44 rounded-lg object-cover"
-          />
-          <h2 className="mt-6 text-4xl font-bold text-pink-500 googleFontss-dancingScript">Meet Dr. Kamini</h2>
-          <p className="mt-3 text-lg text-slate-700 leading-relaxed text-justify">
-            Dr. Kamini Shakya is a dedicated and compassionate physiotherapist with over 2+ years of professional experience in rehabilitation and pain management. With a strong academic foundation and practical clinical exposure, she is committed to helping patients regain mobility, reduce pain, and improve their quality of life through personalized, evidence-based care.
-          </p>
-
-          <p className="text-lg text-slate-700 leading-relaxed text-justify mt-2">
-            She holds a Master’s Degree in Physiotherapy, reflecting advanced knowledge and specialization in modern rehabilitation techniques. Dr. Kamini is also certified in FCY (Functional Clinical Yoga), allowing her to integrate therapeutic yoga principles with physiotherapy for better recovery, posture correction, and long-term functional improvement.
-          </p>
-
-          <p className="text-lg text-slate-700 leading-relaxed text-justify mt-2">
-            Dr. Kamini has gained clinical experience across the NCR region, providing both clinic-based and home-visit services. Her professional background includes work at SMS Hospital, Jaipur, where she managed a wide range of musculoskeletal and neurological cases, strengthening her ability to handle diverse patient needs.
-          </p>
-
-          <p className="text-lg text-slate-700 leading-relaxed text-justify mt-2">
-            Her areas of expertise include back and neck pain management, post-surgical rehabilitation, sports injury recovery, neurological rehabilitation, knee and shoulder therapy, and geriatric physiotherapy. She provides in-home care when needed to ensure continuity and comfort.
-          </p>
-
-          <p className="text-lg text-slate-700 leading-relaxed text-justify mt-2">
-            Dr. Kamini follows a patient-centered approach: each treatment plan is tailored to medical history, lifestyle, and recovery goals. Beyond immediate pain relief, she focuses on restoring function, improving strength and mobility, and preventing recurrence — combining scientific techniques with compassionate care to empower patients through their recovery.
-          </p>
-          <ul className="mt-6 space-y-2 text-sm text-slate-600">
-            <li>• Mpt Physiotherapy</li>
-            <li>• 2+ years clinical experience</li>
-            <li>• Special interests: sports rehab, women’s health</li>
-          </ul>
-        </div>
-
-        <div className="space-y-6">
-          <div className="rounded-3xl bg-white p-6 shadow-2xl">
-            <h3 className="text-xl font-semibold text-teal-900">Treatment Philosophy</h3>
-            <p className="mt-3 text-slate-700">
-              We focus on long-term improvements by combining hands-on care with
-              progressive movement plans and simple home exercises — always
-              explained so you know why each step matters.
+    <main className="min-h-screen bg-gradient-to-b from-pink-50 via-white to-white text-slate-800">
+      <section className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-teal-700">About the practitioner</p>
+            <h1 className="mt-3 text-5xl font-bold leading-tight text-pink-500 md:text-6xl googleFontss-dancingScript">
+              Dr. Kamini Shakya
+            </h1>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-700 md:text-lg">
+              A compassionate physiotherapist focused on pain relief, mobility restoration, and long-term functional recovery through personalised, evidence-led care.
             </p>
-          </div>
 
-          <div className="rounded-3xl bg-white p-6 shadow-2xl">
-            <h3 className="text-xl font-semibold text-teal-900">Core Services</h3>
-            <div className="mt-4 grid gap-4">
-              <div className="flex items-start gap-3">
-                <div className="rounded-lg bg-teal-50 p-3 text-teal-700">💆‍♀️</div>
-                <div>
-                  <p className="font-semibold text-teal-900">Hands-on therapy</p>
-                  <p className="text-sm text-slate-600">Soft tissue release and joint mobilisations.</p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {highlights.map((item) => (
+                <div key={item.label} className="rounded-2xl border border-pink-100 bg-white p-5 shadow-lg">
+                  <p className="text-2xl font-semibold text-teal-900">{item.value}</p>
+                  <p className="mt-1 text-xs leading-snug text-slate-600">{item.label}</p>
                 </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="rounded-lg bg-teal-50 p-3 text-teal-700">🏃‍♀️</div>
-                <div>
-                  <p className="font-semibold text-teal-900">Rehab programs</p>
-                  <p className="text-sm text-slate-600">Post-surgical and sport-specific return-to-play plans.</p>
-                </div>
-              </div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+              >
+                Book an Appointment
+              </Link>
+              <a
+                href="tel:+919772919458"
+                className="inline-flex items-center justify-center rounded-full border border-teal-900 px-6 py-3 text-sm font-semibold text-teal-900 transition hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                Call +91 97729 19458
+              </a>
             </div>
           </div>
 
-          <div className="rounded-3xl bg-white p-6 shadow-2xl">
-            <h3 className="text-xl font-semibold text-teal-900">Book a visit</h3>
-            <p className="mt-3 text-slate-700">Appointments are available Monday–Saturday. New patients welcome.</p>
-            <div className="mt-4 flex gap-3">
-              <a href="tel:+919772919458" className="rounded-full bg-teal-800 px-4 py-2 text-xs font-semibold text-white">Call +91 97729 19458</a>
-              <a href="#contact" className="rounded-full border border-teal-800 px-4 py-2 text-xs font-semibold text-teal-800">Contact form</a>
+          <div className="relative">
+            <div className="overflow-hidden rounded-3xl bg-white p-5 shadow-2xl">
+              <Image
+                src="/kamini.png"
+                alt="Dr. Kamini Shakya"
+                width={940}
+                height={920}
+                className="mx-auto h-72 w-full max-w-sm rounded-2xl object-contain"
+                priority
+              />
+              <div className="mt-5 rounded-2xl bg-pink-50 p-5">
+                <p className="text-sm font-semibold text-teal-900">Physiotherapist</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-700">
+                  MPT Physiotherapy with certification in Functional Clinical Yoga, blending rehabilitation science with mindful movement.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
-  );
+
+      <section className="mx-auto max-w-6xl px-6 py-8">
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-teal-700">Her story</p>
+            <h2 className="mt-3 text-4xl font-bold text-pink-500 googleFontss-dancingScript">Care with clarity</h2>
+          </div>
+          <div className="space-y-4 text-sm leading-relaxed text-slate-700 md:text-base">
+            <p>
+              Dr. Kamini Shakya has worked across clinic-based and home-visit physiotherapy settings, supporting patients with musculoskeletal, neurological, post-surgical, sports, and age-related concerns.
+            </p>
+            <p>
+              Her clinical exposure across the NCR region and experience at SMS Hospital, Jaipur strengthened her ability to assess diverse conditions and build practical recovery plans for daily life.
+            </p>
+            <p>
+              Her work is patient-centred: each plan is shaped around medical history, lifestyle, pain behaviour, strength, mobility, and the confidence a patient needs to return to normal activity.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-10">
+        <div className="grid gap-5 md:grid-cols-3">
+          {approach.map((item) => (
+            <article key={item.title} className="rounded-2xl border border-pink-50 bg-white p-6 shadow-lg">
+              <h3 className="text-lg font-semibold text-teal-900">{item.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.copy}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-10">
+        <div className="grid gap-8 rounded-3xl bg-white p-6 shadow-2xl md:grid-cols-[0.9fr_1.1fr] md:p-8">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-teal-700">Expertise</p>
+            <h2 className="mt-3 text-4xl font-bold text-pink-500 googleFontss-dancingScript">What she treats</h2>
+            <p className="mt-4 text-sm leading-relaxed text-slate-600">
+              Treatment is designed to reduce pain, improve strength and mobility, and prevent recurrence wherever possible.
+            </p>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            {focusAreas.map((area) => (
+              <div key={area} className="rounded-2xl bg-pink-50 px-4 py-3 text-sm font-medium text-slate-700">
+                {area}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 pb-16 pt-6">
+        <div className="flex flex-col gap-5 rounded-3xl bg-teal-800 p-8 text-white shadow-2xl md:flex-row md:items-center md:justify-between">
+          <div>
+            <h2 className="text-2xl font-semibold">Ready to start recovery?</h2>
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-teal-50">
+              Call the clinic to book an appointment or discuss whether clinic care or a home visit is right for you.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-teal-900 shadow-lg transition hover:-translate-y-0.5"
+          >
+            Contact Details
+          </Link>
+        </div>
+      </section>
+    </main>
+  )
 }

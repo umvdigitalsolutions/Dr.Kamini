@@ -1,5 +1,3 @@
-import ContactForm from '../../components/ContactForm'
-
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-800">
@@ -96,15 +94,6 @@ export default function ContactPage() {
                 <div><strong>Payment:</strong> Cash, UPI accepted.</div>
                 <div><strong>Location:</strong> Rathi Hospital, Shastri Nagar, Jodhpur</div>
               </div>
-            </div>
-          </div>
-
-          {/* Contact form */}
-          <div className="mt-10">
-            <h3 className="text-lg font-medium text-slate-900">Send Us a Message</h3>
-            <p className="mt-2 text-slate-600">Have a question or need to book? Send a message and we'll get back to you within 1 business day.</p>
-            <div className="mt-4 bg-white border border-slate-100 rounded-lg p-6 shadow-sm">
-              <ContactForm />
             </div>
           </div>
 
