@@ -8,10 +8,11 @@ export default function Header() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "about-us" },
-    { name: "Services", href: "services" },
-    { name: "Stories", href: "stories" },
-    { name: "Contact Us", href: "contact" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Services", href: "/services" },
+    { name: "Pain Map", href: "/pain-map" },
+    { name: "Stories", href: "/stories" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
   return (
@@ -24,7 +25,7 @@ export default function Header() {
             className="h-12 w-auto md:h-12 object-contain"
           />
         </Link>
-        <nav className="hidden items-center gap-12 text-lg text-slate-600 md:flex googleFontss-dancingScript">
+        <nav className="hidden items-center gap-7 text-lg text-slate-600 md:flex googleFontss-dancingScript">
           {navLinks.map((link) => (
             <Link
               key={link.name}
